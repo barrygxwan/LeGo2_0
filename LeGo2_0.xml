@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryElement:AutomationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:libraryElement="org.fordiac.ide.model.libraryElement" name="LeGo2_0" id="_YfausCEQEeiBT-U_-3bVYA">
+  <versionInfo author="Author" organization="4DIAC-Consortium" version="1.0"/>
+  <application comment="" name="HMI">
+    <fBNetwork href="HMI.xml#//@fbNetwork"/>
+  </application>
+  <application comment="" name="SwitchStopperLifter">
+    <fBNetwork href="SwitchStopperLifter.xml#//@fbNetwork"/>
+  </application>
+  <application comment="" name="URCamera">
+    <fBNetwork href="URCamera.xml#//@fbNetwork"/>
+  </application>
+  <application comment="" name="DataBaseOperation">
+    <fBNetwork href="DataBaseOperation.xml#//@fbNetwork"/>
+  </application>
+  <systemConfiguration>
+    <systemConfigurationNetwork href="SysConf.xml#//@systemConfigNetwork"/>
+  </systemConfiguration>
+</libraryElement:AutomationSystem>

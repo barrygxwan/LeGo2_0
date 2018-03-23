@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="CameraMonitoring">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-03-05" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="MSGIN"/>
+      </Event>
+      <Event Name="RESET" Type="Event">
+        <With Var="IVAL"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="MSGOUT"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="MSGIN" Type="STRING"/>
+      <VarDeclaration Name="IVAL" Type="STRING"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="Output event qualifier" Name="MSGOUT" Type="STRING"/>
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="475.0" y="1125.0"/>
+      <ECState Name="CameraCMD1" x="1745.0" y="855.0">
+        <ECAction Algorithm="SENDTakeForPallet" Output="CNF"/>
+      </ECState>
+      <ECState Name="CameraCMD2" x="1710.0" y="1235.0">
+        <ECAction Algorithm="SendTakeForMaterial" Output="CNF"/>
+      </ECState>
+      <ECState Name="RESULT1" x="1710.0" y="1710.0">
+        <ECAction Algorithm="RECVForPallet" Output="CNF"/>
+      </ECState>
+      <ECState Name="RESET" x="740.0" y="2080.0">
+        <ECAction Algorithm="RESET" Output="CNF"/>
+      </ECState>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;1&quot;]" Destination="CameraCMD1" Source="START" x="925.0" y="765.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="CameraCMD1" x="1340.0" y="1045.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;2&quot;]" Destination="CameraCMD2" Source="START" x="1305.0" y="1205.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="CameraCMD2" x="1225.0" y="1485.0"/>
+      <ECTransition Comment="" Condition="REQ" Destination="RESULT1" Source="START" x="1210.0" y="1520.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="RESULT1" x="1110.0" y="1685.0"/>
+      <ECTransition Comment="" Condition="RESET" Destination="RESET" Source="START" x="735.0" y="1680.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="RESET" x="315.0" y="1770.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="SENDTakeForPallet">
+      <ST Text="MSGOUT:=&quot;Taking photos for Pallet !&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SendTakeForMaterial">
+      <ST Text="MSGOUT:=&quot;Taking photos for Material !&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RECVForPallet">
+      <ST Text="MSGOUT:=MSGIN;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RECVForMaterial">
+      <ST Text="MSGOUT:=MSGIN;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RESET">
+      <ST Text="MSGOUT:=IVAL;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

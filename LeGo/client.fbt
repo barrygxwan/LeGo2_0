@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="client">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-01-28" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event">
+        <With Var="IP"/>
+        <With Var="PORT"/>
+        <With Var="ID"/>
+        <With Var="CONNECTTIME"/>
+        <With Var="CHECKTIME"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="SEND" Type="Event">
+        <With Var="QI"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+      <Event Name="STATE" Type="Event">
+        <With Var="RESULT"/>
+      </Event>
+      <Event Comment="Execution Confirmation" Name="RECEIVED" Type="Event">
+        <With Var="QO"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="IP" Type="STRING"/>
+      <VarDeclaration Name="PORT" Type="STRING"/>
+      <VarDeclaration Name="ID" Type="STRING"/>
+      <VarDeclaration Name="CONNECTTIME" Type="TIME"/>
+      <VarDeclaration Name="CHECKTIME" Type="TIME"/>
+      <VarDeclaration Comment="Input event qualifier" Name="QI" Type="STRING"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="RESULT" Type="STRING"/>
+      <VarDeclaration Comment="Output event qualifier" Name="QO" Type="STRING"/>
+    </OutputVars>
+    <Plugs>
+      <AdapterDeclaration Name="ConnectTimeOut" Type="ATimeOut"/>
+      <AdapterDeclaration Name="CheckTimeOut" Type="ATimeOut"/>
+    </Plugs>
+  </InterfaceList>
+  <BasicFB>
+    <InternalVars>
+      <VarDeclaration Comment="Internal Variable" InitialValue="FALSE" Name="ISCONNECT" Type="BOOL"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="FALSE" Name="ISNOTICE" Type="BOOL"/>
+    </InternalVars>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="760.0" y="-10.0"/>
+      <ECState Name="Init" x="1805.0" y="0.0"/>
+      <ECState Name="Idle" x="1330.0" y="1710.0"/>
+      <ECState Name="Send" x="285.0" y="1995.0">
+        <ECAction Algorithm="Send"/>
+      </ECState>
+      <ECState Name="Receive" x="1805.0" y="2375.0">
+        <ECAction Algorithm="Receive"/>
+      </ECState>
+      <ECState Name="Success" x="1140.0" y="380.0">
+        <ECAction Output="INITO"/>
+      </ECState>
+      <ECState Name="Connecting" x="2280.0" y="380.0">
+        <ECAction Algorithm="Connect" Output="STATE"/>
+      </ECState>
+      <ECState Name="Pending" x="2565.0" y="1805.0">
+        <ECAction Algorithm="SetCheckTimeOut" Output="CheckTimeOut.START"/>
+      </ECState>
+      <ECState Name="Notice" x="1900.0" y="1330.0">
+        <ECAction Output="RECEIVED"/>
+      </ECState>
+      <ECState Name="Fail" x="2565.0" y="950.0">
+        <ECAction Algorithm="SetConnectTimeOut" Output="ConnectTimeOut.START"/>
+      </ECState>
+      <ECState Name="Identify" x="1140.0" y="1045.0">
+        <ECAction Algorithm="SendID"/>
+      </ECState>
+      <ECState Name="Judging" x="190.0" y="1520.0">
+        <ECAction Algorithm="SetCheckTimeOut" Output="CheckTimeOut.START"/>
+      </ECState>
+      <ECTransition Comment="" Condition="INIT" Destination="Init" Source="START" x="1495.0" y="-120.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Connecting" Source="Init" x="2370.0" y="270.0"/>
+      <ECTransition Comment="" Condition="[ISCONNECT = TRUE]" Destination="Success" Source="Connecting" x="1640.0" y="100.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Pending" Source="Receive" x="2920.0" y="2280.0"/>
+      <ECTransition Comment="" Condition="CheckTimeOut.TimeOut[ISNOTICE = TRUE]" Destination="Notice" Source="Pending" x="2685.0" y="1660.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Notice" x="1655.0" y="1495.0"/>
+      <ECTransition Comment="" Condition="CheckTimeOut.TimeOut[ISNOTICE = FALSE]" Destination="Idle" Source="Pending" x="2125.0" y="2135.0"/>
+      <ECTransition Comment="" Condition="[ISCONNECT = FALSE]" Destination="Fail" Source="Connecting" x="1855.0" y="765.0"/>
+      <ECTransition Comment="" Condition="ConnectTimeOut.TimeOut" Destination="Connecting" Source="Fail" x="3130.0" y="705.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Identify" Source="Success" x="1305.0" y="600.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Send" x="1030.0" y="2360.0"/>
+      <ECTransition Comment="" Condition="[QI = '']" Destination="Receive" Source="Idle" x="1320.0" y="2275.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Identify" x="1365.0" y="1285.0"/>
+      <ECTransition Comment="" Condition="[NOT(QI = '')]" Destination="Judging" Source="Idle" x="885.0" y="1315.0"/>
+      <ECTransition Comment="" Condition="CheckTimeOut.TimeOut" Destination="Send" Source="Judging" x="330.0" y="1825.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="Connect">
+      <ST Text=""/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="Send">
+      <ST Text=""/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="Receive">
+      <ST Text=""/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SendID">
+      <ST Text=""/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SetConnectTimeOut">
+      <ST Text="ConnectTimeOut.DT := CONNECTTIME;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SetCheckTimeOut">
+      <ST Text="CheckTimeOut.DT := CHECKTIME;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="stopper">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-01-17" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event">
+        <With Var="QI"/>
+        <With Var="timeParam"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="DOWN_REQ" Type="Event">
+        <With Var="QI"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event">
+        <With Var="QO"/>
+      </Event>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="QO1"/>
+        <With Var="QO"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="QI" Type="BOOL"/>
+      <VarDeclaration Comment="For timedelay" Name="timeParam" Type="TIME"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="Output event qualifier" Name="QO" Type="BOOL"/>
+      <VarDeclaration Name="QO1" Type="BOOL"/>
+    </OutputVars>
+    <Plugs>
+      <AdapterDeclaration Name="ATimeOut" Type="ATimeOut"/>
+    </Plugs>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="475.0" y="1125.0"/>
+      <ECState Comment="Initialization" Name="Init" x="1235.0" y="665.0">
+        <ECAction Algorithm="initialize" Output="INITO"/>
+      </ECState>
+      <ECState Comment="Normal execution" Name="Release" x="3420.0" y="1235.0">
+        <ECAction Algorithm="normalOperation" Output="CNF"/>
+      </ECState>
+      <ECState Name="Initialized" x="1995.0" y="1520.0"/>
+      <ECState Name="DeInit" x="1045.0" y="1995.0">
+        <ECAction Algorithm="initialize" Output="INITO"/>
+      </ECState>
+      <ECState Comment="After timePara s " Name="timeDelay" x="3325.0" y="1995.0">
+        <ECAction Algorithm="ATimeOut" Output="ATimeOut.START"/>
+      </ECState>
+      <ECState Name="Reset" x="2375.0" y="2280.0">
+        <ECAction Algorithm="RESET" Output="CNF"/>
+      </ECState>
+      <ECTransition Comment="" Condition="INIT[TRUE = QI]" Destination="Init" Source="START" x="1365.0" y="1245.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Initialized" Source="Init" x="1470.0" y="1360.0"/>
+      <ECTransition Comment="" Condition="DOWN_REQ" Destination="Release" Source="Initialized" x="2615.0" y="1000.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="DeInit" x="940.0" y="1445.0"/>
+      <ECTransition Comment="" Condition="INIT[FALSE = QI]" Destination="DeInit" Source="Initialized" x="1430.0" y="1435.0"/>
+      <ECTransition Comment="" Condition="1" Destination="timeDelay" Source="Release" x="3795.0" y="1725.0"/>
+      <ECTransition Comment="" Condition="ATimeOut.TimeOut" Destination="Reset" Source="timeDelay" x="2955.0" y="2175.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Initialized" Source="Reset" x="2035.0" y="2035.0"/>
+    </ECC>
+    <Algorithm Comment="Initialization algorithm" Name="initialize">
+      <ST Text="QO := QI;&#13;&#10;QO1:=FALSE;"/>
+    </Algorithm>
+    <Algorithm Comment="Normally executed algorithm" Name="deInitialize">
+      <ST Text="&#10;QO := FALSE;&#13;&#10;QO1:=FALSE;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="normalOperation">
+      <ST Text="QO1:= true;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="ATimeOut">
+      <ST Text="ATimeOut.DT := timeParam;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RESET">
+      <ST Text="QO1:=FALSE;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

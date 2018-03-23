@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="delay">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-02-06" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="START" Type="Event"/>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="DELAY" Type="TIME"/>
+    </InputVars>
+    <OutputVars/>
+    <Plugs>
+      <AdapterDeclaration Name="timeout" Type="ATimeOut"/>
+    </Plugs>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="475.0" y="1125.0"/>
+      <ECState Name="Idle" x="1330.0" y="950.0"/>
+      <ECState Name="REQ" x="1925.0" y="1295.0">
+        <ECAction Algorithm="SETDELAY" Output="timeout.START"/>
+      </ECState>
+      <ECState Name="CNF" x="1995.0" y="665.0">
+        <ECAction Output="CNF"/>
+      </ECState>
+      <ECTransition Comment="" Condition="START" Destination="Idle" Source="START" x="960.0" y="865.0"/>
+      <ECTransition Comment="" Condition="REQ" Destination="REQ" Source="Idle" x="1720.0" y="1360.0"/>
+      <ECTransition Comment="" Condition="timeout.TimeOut" Destination="CNF" Source="REQ" x="2045.0" y="1035.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="CNF" x="1745.0" y="845.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="SETDELAY">
+      <ST Text="timeout.DT := DELAY;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

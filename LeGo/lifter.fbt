@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="lifter">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-01-17" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event">
+        <With Var="QI"/>
+        <With Var="timeParam"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="UP_REQ" Type="Event">
+        <With Var="QI1"/>
+      </Event>
+      <Event Comment="the lifter down" Name="DOWN_REQ" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event">
+        <With Var="QO"/>
+      </Event>
+      <Event Comment="Execution Confirmation" Name="Do_CNF" Type="Event">
+        <With Var="QO"/>
+        <With Var="QO1"/>
+      </Event>
+      <Event Name="UP_FINISHED" Type="Event"/>
+      <Event Name="DOWN_FINISHED" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="QI" Type="BOOL"/>
+      <VarDeclaration Comment="the value of switch" Name="QI1" Type="BOOL"/>
+      <VarDeclaration Name="timeParam" Type="TIME"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="Output event qualifier" Name="QO" Type="BOOL"/>
+      <VarDeclaration Comment="If UP_REQ,QO1=true; if DOWN_REQ,QO1=false" Name="QO1" Type="BOOL"/>
+    </OutputVars>
+    <Plugs>
+      <AdapterDeclaration Comment="time for UP" Name="ATimeOut1" Type="ATimeOut"/>
+      <AdapterDeclaration Comment="time for down" Name="ATimeOut2" Type="ATimeOut"/>
+    </Plugs>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="475.0" y="665.0"/>
+      <ECState Comment="Initialization" Name="Init" x="1235.0" y="665.0">
+        <ECAction Algorithm="initialize" Output="INITO"/>
+      </ECState>
+      <ECState Comment="Normal execution" Name="DoUP" x="2660.0" y="570.0">
+        <ECAction Algorithm="UP" Output="Do_CNF"/>
+      </ECState>
+      <ECState Name="Initialized" x="1900.0" y="1140.0"/>
+      <ECState Name="DeInit" x="570.0" y="1235.0">
+        <ECAction Algorithm="deInitialize" Output="INITO"/>
+      </ECState>
+      <ECState Name="UPtime" x="3325.0" y="855.0">
+        <ECAction Algorithm="UPtimeDelay" Output="ATimeOut1.START"/>
+      </ECState>
+      <ECState Name="UPfinish" x="3230.0" y="1615.0">
+        <ECAction Output="UP_FINISHED"/>
+      </ECState>
+      <ECState Name="DoDOWN" x="1995.0" y="2185.0">
+        <ECAction Algorithm="Down" Output="Do_CNF"/>
+      </ECState>
+      <ECState Name="DOWNtime" x="1235.0" y="2470.0">
+        <ECAction Algorithm="DownTimeDelay" Output="ATimeOut2.START"/>
+      </ECState>
+      <ECState Name="DownFinish" x="750.0" y="2060.0">
+        <ECAction Algorithm="initialize" Output="DOWN_FINISHED"/>
+      </ECState>
+      <ECTransition Comment="" Condition="INIT[TRUE = QI]" Destination="Init" Source="START" x="900.0" y="460.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Initialized" Source="Init" x="1660.0" y="975.0"/>
+      <ECTransition Comment="" Condition="UP_REQ" Destination="DoUP" Source="Initialized" x="2390.0" y="560.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="DeInit" x="485.0" y="1060.0"/>
+      <ECTransition Comment="" Condition="INIT[FALSE = QI]" Destination="DeInit" Source="Initialized" x="1095.0" y="1540.0"/>
+      <ECTransition Comment="" Condition="1" Destination="UPtime" Source="DoUP" x="3210.0" y="720.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Initialized" Source="UPfinish" x="2525.0" y="2230.0"/>
+      <ECTransition Comment="" Condition="DOWN_REQ" Destination="DoDOWN" Source="Initialized" x="2285.0" y="1855.0"/>
+      <ECTransition Comment="" Condition="1" Destination="DOWNtime" Source="DoDOWN" x="1805.0" y="2415.0"/>
+      <ECTransition Comment="" Condition="ATimeOut2.TimeOut" Destination="DownFinish" Source="DOWNtime" x="1150.0" y="2345.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Initialized" Source="DownFinish" x="825.0" y="1795.0"/>
+      <ECTransition Comment="" Condition="ATimeOut1.TimeOut" Destination="UPfinish" Source="UPtime" x="3670.0" y="1330.0"/>
+    </ECC>
+    <Algorithm Comment="Initialization algorithm" Name="initialize">
+      <ST Text="QO1:=FALSE;&#10;QO := QI;"/>
+    </Algorithm>
+    <Algorithm Comment="Normally executed algorithm" Name="deInitialize">
+      <ST Text="&#10;QO := FALSE;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="UP">
+      <ST Text="QO1:=True;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="UPtimeDelay">
+      <ST Text="ATimeOut1.DT :=timeParam;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="Down">
+      <ST Text="QO1:=FALSE;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="DownTimeDelay">
+      <ST Text="ATimeOut2.DT:= timeParam;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

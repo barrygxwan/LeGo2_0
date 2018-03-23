@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="socketClient">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-02-07" Organization="4DIAC-Consortium" Version="0.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="SINIT" Type="Event">
+        <With Var="SCHECKTIME"/>
+        <With Var="SCONNECTTIME"/>
+        <With Var="SID"/>
+        <With Var="SPORT"/>
+        <With Var="SIP"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="SSEND" Type="Event">
+        <With Var="SQI"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="SINITO" Type="Event"/>
+      <Event Comment="Execution Confirmation" Name="SSTATE" Type="Event">
+        <With Var="SRESULT"/>
+      </Event>
+      <Event Name="SRECEIVE" Type="Event">
+        <With Var="SQO"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SIP" Type="STRING"/>
+      <VarDeclaration Name="SPORT" Type="STRING"/>
+      <VarDeclaration Name="SID" Type="STRING"/>
+      <VarDeclaration Name="SCONNECTTIME" Type="TIME"/>
+      <VarDeclaration Name="SCHECKTIME" Type="TIME"/>
+      <VarDeclaration Comment="Input event qualifier" Name="SQI" Type="STRING"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="SRESULT" Type="STRING"/>
+      <VarDeclaration Comment="Output event qualifier" Name="SQO" Type="STRING"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Name="client" Type="client" x="1140.0" y="0.0"/>
+    <FB Name="E_TimeOut" Type="E_TimeOut" x="1710.0" y="1425.0"/>
+    <FB Name="E_TimeOut_1" Type="E_TimeOut" x="1045.0" y="1425.0"/>
+    <DataConnections>
+      <Connection Destination="E_TimeOut.TimeOutSocket" Source="client.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="E_TimeOut_1.TimeOutSocket" Source="client.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="SQO" Source="client.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="SRESULT" Source="client.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.QI" Source="SQI" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.CHECKTIME" Source="SCHECKTIME" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.CONNECTTIME" Source="SCONNECTTIME" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.ID" Source="SID" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.PORT" Source="SPORT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.IP" Source="SIP" dx1="0.0" dx2="0.0" dy="0.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Destination="SRECEIVE" Source="client.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="SSTATE" Source="client.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="SINITO" Source="client.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.SEND" Source="SSEND" dx1="0.0" dx2="0.0" dy="0.0"/>
+      <Connection Destination="client.INIT" Source="SINIT" dx1="0.0" dx2="0.0" dy="0.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

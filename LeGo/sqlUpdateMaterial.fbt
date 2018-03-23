@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="sqlUpdateMaterial">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-01-05" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+      <Event Name="ATTEMPTCATCH" Type="Event">
+        <With Var="MID"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="CATCHED" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="MID" Type="STRING"/>
+    </InputVars>
+    <OutputVars/>
+  </InterfaceList>
+  <BasicFB>
+    <InternalVars>
+      <VarDeclaration Comment="Internal Variable" InitialValue="" Name="catchMid" Type="STRING"/>
+    </InternalVars>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="380.0" y="665.0"/>
+      <ECState Comment="Initialization" Name="Init" x="1235.0" y="665.0">
+        <ECAction Output="INITO"/>
+      </ECState>
+      <ECState Name="Idle" x="1235.0" y="1045.0"/>
+      <ECState Name="Update" x="1340.0" y="1450.0">
+        <ECAction Algorithm="UPDATE"/>
+      </ECState>
+      <ECState Name="SetMid" x="2090.0" y="855.0">
+        <ECAction Algorithm="SETMID"/>
+      </ECState>
+      <ECTransition Comment="" Condition="INIT" Destination="Init" Source="START" x="1020.0" y="515.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Init" x="1390.0" y="860.0"/>
+      <ECTransition Comment="" Condition="CATCHED" Destination="Update" Source="Idle" x="2275.0" y="1295.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Update" x="960.0" y="1345.0"/>
+      <ECTransition Comment="" Condition="ATTEMPTCATCH" Destination="SetMid" Source="Idle" x="1755.0" y="885.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="SetMid" x="1835.0" y="1015.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="UPDATE">
+      <ST Text=""/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SETMID">
+      <ST Text="catchMid := MID;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="palletOne">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-01-05" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+      <Event Name="CATCHED" Type="Event"/>
+      <Event Name="CAMERAED" Type="Event">
+        <With Var="C1"/>
+        <With Var="C2"/>
+        <With Var="C3"/>
+        <With Var="C4"/>
+      </Event>
+      <Event Name="PASS" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+      <Event Comment="Execution Confirmation" Name="FINDENEXT" Type="Event">
+        <With Var="FINDPOSITION"/>
+      </Event>
+      <Event Name="FULL" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="C1" Type="INT"/>
+      <VarDeclaration Name="C2" Type="INT"/>
+      <VarDeclaration Name="C3" Type="INT"/>
+      <VarDeclaration Name="C4" Type="INT"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="FINDPOSITION" Type="STRING"/>
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <InternalVars>
+      <VarDeclaration Comment="Internal Variable" InitialValue="-1" Name="pos1" Type="INT"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="-1" Name="pos2" Type="INT"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="-1" Name="pos3" Type="INT"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="-1" Name="pos4" Type="INT"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="FALSE" Name="isFull" Type="BOOL"/>
+      <VarDeclaration Comment="Internal Variable" InitialValue="0" Name="currentPos" Type="INT"/>
+    </InternalVars>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="665.0" y="285.0"/>
+      <ECState Comment="Initialization" Name="Initialize" x="1425.0" y="285.0">
+        <ECAction Output="INITO"/>
+      </ECState>
+      <ECState Name="Idle" x="1480.0" y="680.0"/>
+      <ECState Name="InitPosition" x="2470.0" y="1330.0">
+        <ECAction Algorithm="SETPOSITION"/>
+      </ECState>
+      <ECState Name="PutMaterial" x="1235.0" y="1330.0">
+        <ECAction Algorithm="PUTMATERIAL"/>
+      </ECState>
+      <ECState Name="NotifyFind" x="1330.0" y="2090.0">
+        <ECAction Algorithm="SETFINDPOSITION" Output="FINDENEXT"/>
+      </ECState>
+      <ECState Name="PassPosition" x="285.0" y="1235.0">
+        <ECAction Algorithm="SETPASS"/>
+      </ECState>
+      <ECState Name="Exam" x="1425.0" y="1710.0">
+        <ECAction Algorithm="ISFULL"/>
+      </ECState>
+      <ECState Name="NotifyFull" x="-95.0" y="2090.0">
+        <ECAction Algorithm="RESETPOSITION" Output="FULL"/>
+      </ECState>
+      <ECTransition Comment="" Condition="INIT" Destination="Initialize" Source="START" x="1145.0" y="65.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="Initialize" x="1575.0" y="530.0"/>
+      <ECTransition Comment="" Condition="CAMERAED" Destination="InitPosition" Source="Idle" x="2040.0" y="810.0"/>
+      <ECTransition Comment="" Condition="CATCHED" Destination="PutMaterial" Source="Idle" x="1350.0" y="945.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="NotifyFind" x="2465.0" y="1925.0"/>
+      <ECTransition Comment="" Condition="PASS" Destination="PassPosition" Source="Idle" x="1215.0" y="770.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Exam" Source="PutMaterial" x="1290.0" y="1590.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Exam" Source="PassPosition" x="450.0" y="1690.0"/>
+      <ECTransition Comment="" Condition="[isFull = FALSE]" Destination="NotifyFind" Source="Exam" x="1460.0" y="1980.0"/>
+      <ECTransition Comment="" Condition="[isFull = TRUE]" Destination="NotifyFull" Source="Exam" x="600.0" y="1950.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Idle" Source="NotifyFull" x="-230.0" y="710.0"/>
+      <ECTransition Comment="" Condition="1" Destination="Exam" Source="InitPosition" x="2235.0" y="1545.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="SETPOSITION">
+      <ST Text="pos1 := C1;&#13;&#10;pos2 := C2;&#13;&#10;pos3 := C3;&#13;&#10;pos4 := C4;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="PUTMATERIAL">
+      <ST Text="IF(currentPos = 1) THEN&#13;&#10;&#9;pos1 := 1;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 2) THEN&#13;&#10;&#9;pos2 := 1;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 3) THEN&#13;&#10;&#9;pos3 := 1;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 4) THEN&#13;&#10;&#9;pos4 := 1;&#13;&#10;END_IF;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SETPASS">
+      <ST Text="IF(currentPos = 1) THEN&#13;&#10;&#9;pos1 := 0;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 2) THEN&#13;&#10;&#9;pos2 := 0;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 3) THEN&#13;&#10;&#9;pos3 := 0;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 4) THEN&#13;&#10;&#9;pos4 := 0;&#13;&#10;END_IF"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="ISFULL">
+      <ST Text="currentPos := 0;&#13;&#10;isFull := TRUE;&#13;&#10;&#13;&#10;IF(pos1 = -1) THEN&#13;&#10;&#9;currentPos := 1;&#13;&#10;&#9;isFull := FALSE;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(pos2 = -1) THEN&#13;&#10;&#9;currentPos := 2;&#13;&#10;&#9;isFull := FALSE;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(pos3 = -1) THEN&#13;&#10;&#9;currentPos := 3;&#13;&#10;&#9;isFull := FALSE;&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(pos4 = -1) THEN&#13;&#10;&#9;currentPos := 4;&#13;&#10;&#9;isFull := FALSE;&#13;&#10;END_IF;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RESETPOSITION">
+      <ST Text="pos1 := -1;&#13;&#10;pos2 := -1;&#13;&#10;pos3 := -1;&#13;&#10;pos4 := -1;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SETFINDPOSITION">
+      <ST Text="IF(currentPos = 1) THEN&#13;&#10;&#9;FINDPOSITION := '22';&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 2) THEN&#13;&#10;&#9;FINDPOSITION := '23';&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 3) THEN&#13;&#10;&#9;FINDPOSITION := '24';&#13;&#10;END_IF;&#13;&#10;&#13;&#10;IF(currentPos = 4) THEN&#13;&#10;&#9;FINDPOSITION := '26';&#13;&#10;END_IF;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

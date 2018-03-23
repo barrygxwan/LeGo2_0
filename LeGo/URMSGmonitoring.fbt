@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Tamplate for a simple Basic Function Block Type" Name="URMSGmonitoring">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="4DIAC-IDE" Date="2018-03-05" Organization="4DIAC-Consortium" Version="0.0"/>
+  <VersionInfo Author="AZ" Date="2016-05-26" Organization="fortiss GmbH" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="MSGIN"/>
+      </Event>
+      <Event Name="RESET" Type="Event">
+        <With Var="IVAL"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="MSGOUT"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="MSGIN" Type="STRING"/>
+      <VarDeclaration Name="IVAL" Type="STRING"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="Output event qualifier" Name="MSGOUT" Type="STRING"/>
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Comment="Initial State" Name="START" x="475.0" y="1125.0"/>
+      <ECState Name="URCMD1" x="1765.0" y="875.0">
+        <ECAction Algorithm="SendGoPallet" Output="CNF"/>
+      </ECState>
+      <ECState Name="URCMD2" x="1795.0" y="1220.0">
+        <ECAction Algorithm="SendGoMaterial" Output="CNF"/>
+      </ECState>
+      <ECState Name="URCMD3" x="1805.0" y="1520.0">
+        <ECAction Algorithm="SendToGrasp" Output="CNF"/>
+      </ECState>
+      <ECState Name="URResult1" x="1800.0" y="1915.0">
+        <ECAction Algorithm="RECVGoPalletDone" Output="CNF"/>
+      </ECState>
+      <ECState Name="URResult2" x="1805.0" y="2185.0">
+        <ECAction Algorithm="RECVGoMaterialDone" Output="CNF"/>
+      </ECState>
+      <ECState Name="URResult3" x="1805.0" y="2375.0">
+        <ECAction Algorithm="RECVGraspdone" Output="CNF"/>
+      </ECState>
+      <ECState Name="Reset" x="415.0" y="225.0">
+        <ECAction Algorithm="RESET" Output="CNF"/>
+      </ECState>
+      <ECTransition Comment="" Condition="REQ[MSGIN=NOT(&quot;p&quot;) AND (NOT(MSGIN=&quot;m1&quot; OR MSGIN=&quot;m2&quot; OR MSGIN=&quot;m3&quot; OR MSGIN=&quot;m4&quot;  ))  AND (NOT(MSGIN=&quot;material&quot; OR MSGIN=&quot;pallet&quot; OR MSGIN=&quot;graspdone&quot; ))]" Destination="URCMD3" Source="START" x="4630.0" y="1440.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;m1&quot; OR MSGIN=&quot;m2&quot; OR MSGIN=&quot;m3&quot; OR MSGIN=&quot;m4&quot; ]" Destination="URCMD2" Source="START" x="3050.0" y="1065.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;p&quot;]" Destination="URCMD1" Source="START" x="1850.0" y="555.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URCMD3" x="1230.0" y="1455.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URCMD2" x="1285.0" y="1350.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URCMD1" x="1275.0" y="1060.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;pallet&quot;]" Destination="URResult1" Source="START" x="1300.0" y="1565.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URResult1" x="1280.0" y="1590.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;material&quot;]" Destination="URResult2" Source="START" x="1340.0" y="1720.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URResult2" x="1225.0" y="1700.0"/>
+      <ECTransition Comment="" Condition="REQ[MSGIN=&quot;graspdone&quot;]" Destination="URResult3" Source="START" x="1035.0" y="2420.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="URResult3" x="1155.0" y="1875.0"/>
+      <ECTransition Comment="" Condition="RESET" Destination="Reset" Source="START" x="575.0" y="725.0"/>
+      <ECTransition Comment="" Condition="1" Destination="START" Source="Reset" x="500.0" y="760.0"/>
+    </ECC>
+    <Algorithm Comment="new algorithm" Name="SendGoPallet">
+      <ST Text="MSGOUT:=&quot;GoPallet&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SendGoMaterial">
+      <ST Text="MSGOUT:=MSGIN;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="SendToGrasp">
+      <ST Text="MSGOUT:=MSGIN;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RECVGoPalletDone">
+      <ST Text="MSGOUT:=&quot;UR arrives at pallet!&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RECVGoMaterialDone">
+      <ST Text="MSGOUT:=&quot;UR arrives at material zone&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RECVGraspdone">
+      <ST Text="MSGOUT:=&quot;UR Grasp Done!&quot;;"/>
+    </Algorithm>
+    <Algorithm Comment="new algorithm" Name="RESET">
+      <ST Text="MSGOUT:=IVAL;"/>
+    </Algorithm>
+  </BasicFB>
+</FBType>

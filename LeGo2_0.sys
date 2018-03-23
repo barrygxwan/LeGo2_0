@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="LeGo2_0">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="HMI">
+    <SubAppNetwork>
+      <FB Name="FB_LABEL" Type="FB_LABEL" x="855.0" y="380.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Server IP:"/>
+      </FB>
+      <FB Name="FB_LABEL_0" Type="FB_LABEL" x="2565.0" y="380.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Server Port:"/>
+      </FB>
+      <FB Name="IN_ANY" Type="IN_ANY" x="1805.0" y="380.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="127.0.0.1"/>
+      </FB>
+      <FB Name="IN_ANY_0" Type="IN_ANY" x="3325.0" y="475.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="8888"/>
+      </FB>
+      <FB Name="PUBLISH_2" Type="PUBLISH_2" x="5510.0" y="570.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+      </FB>
+      <FB Name="STRING2STRING" Type="STRING2STRING" x="2470.0" y="1045.0"/>
+      <FB Name="STRING2STRING_0" Type="STRING2STRING" x="3990.0" y="950.0"/>
+      <FB Name="IN_EVENT" Type="IN_EVENT" x="855.0" y="1045.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Connection"/>
+      </FB>
+      <FB Name="FB_LABEL_1" Type="FB_LABEL" x="950.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="switch:"/>
+      </FB>
+      <FB Name="FB_LABEL_1_0" Type="FB_LABEL" x="2470.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="stopper:"/>
+      </FB>
+      <FB Name="FB_LABEL_1_1" Type="FB_LABEL" x="3895.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="lifter:"/>
+      </FB>
+      <FB Name="FB_LABEL_1_2" Type="FB_LABEL" x="5320.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="UR:"/>
+      </FB>
+      <FB Name="FB_LABEL_1_3" Type="FB_LABEL" x="6745.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="camera:"/>
+      </FB>
+      <FB Name="OUT_ANY" Type="OUT_ANY" x="1710.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_0" Type="OUT_ANY" x="3135.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_1" Type="OUT_ANY" x="4560.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_2" Type="OUT_ANY" x="5985.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_3" Type="OUT_ANY" x="7315.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_0" Type="SUBSCRIBE_1" x="855.0" y="3135.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%switchclient%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_0_0" Type="SUBSCRIBE_1" x="2470.0" y="3230.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%stopperclient%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_0_1" Type="SUBSCRIBE_1" x="3800.0" y="3230.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%lifterclient%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_0_2" Type="SUBSCRIBE_1" x="5320.0" y="3325.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URclient%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_0_3" Type="SUBSCRIBE_1" x="6650.0" y="3230.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%Cameraclient%"/>
+      </FB>
+      <FB Name="STRING2STRING_2" Type="STRING2STRING" x="1520.0" y="3420.0"/>
+      <FB Name="STRING2STRING_2_0" Type="STRING2STRING" x="3040.0" y="3610.0"/>
+      <FB Name="STRING2STRING_2_1" Type="STRING2STRING" x="4370.0" y="3610.0"/>
+      <FB Name="STRING2STRING_2_2" Type="STRING2STRING" x="5890.0" y="3610.0"/>
+      <FB Name="STRING2STRING_2_3" Type="STRING2STRING" x="7220.0" y="3515.0"/>
+      <FB Name="FB_LABEL_2" Type="FB_LABEL" x="855.0" y="4370.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="UR State Monitoring :"/>
+      </FB>
+      <FB Name="FB_LABEL_2_0" Type="FB_LABEL" x="1900.0" y="4370.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Command:"/>
+      </FB>
+      <FB Name="FB_LABEL_2_1" Type="FB_LABEL" x="3515.0" y="4370.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Result:"/>
+      </FB>
+      <FB Name="FB_LABEL_2_2" Type="FB_LABEL" x="760.0" y="6840.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Camera State Monitoring :"/>
+      </FB>
+      <FB Name="FB_LABEL_2_0_0" Type="FB_LABEL" x="1900.0" y="6840.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Command:"/>
+      </FB>
+      <FB Name="FB_LABEL_2_1_0" Type="FB_LABEL" x="3610.0" y="6840.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="Result:"/>
+      </FB>
+      <FB Name="OUT_ANY_4" Type="OUT_ANY" x="2660.0" y="4370.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_5" Type="OUT_ANY" x="4465.0" y="4370.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_6" Type="OUT_ANY" x="2660.0" y="6840.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="OUT_ANY_7" Type="OUT_ANY" x="4465.0" y="6840.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="TYPE" Value="STRING"/>
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_1" Type="SUBSCRIBE_1" x="1615.0" y="5225.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URMoniteringCMD%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="3610.0" y="5225.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URMoniteringRESULT%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_3" Type="SUBSCRIBE_1" x="1710.0" y="7790.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%CameraMornitoringCMD%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1_4" Type="SUBSCRIBE_1" x="3515.0" y="7790.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%CameraMornitoringResult%"/>
+      </FB>
+      <FB Name="STRING2STRING_3" Type="STRING2STRING" x="2560.0" y="5660.0"/>
+      <FB Name="STRING2STRING_4" Type="STRING2STRING" x="4680.0" y="5715.0"/>
+      <FB Name="STRING2STRING_5" Type="STRING2STRING" x="2470.0" y="8075.0"/>
+      <FB Name="STRING2STRING_6" Type="STRING2STRING" x="4465.0" y="8075.0"/>
+      <EventConnections>
+        <Connection Destination="IN_ANY.INIT" Source="FB_LABEL.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_0.INIT" Source="IN_ANY.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="IN_ANY_0.INIT" Source="FB_LABEL_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2.INIT" Source="IN_ANY_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING.REQ" Source="IN_ANY.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="IN_ANY_0.REQ" Source="STRING2STRING.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_0.REQ" Source="IN_ANY_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2.REQ" Source="STRING2STRING_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="IN_ANY.REQ" Source="IN_EVENT.IND" dx1="280.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="IN_EVENT.INIT" Source="PUBLISH_2.INITO" dx1="0.0" dx2="0.0" dy="1005.0"/>
+        <Connection Destination="OUT_ANY.INIT" Source="FB_LABEL_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_1_0.INIT" Source="OUT_ANY.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_0.INIT" Source="FB_LABEL_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_1_1.INIT" Source="OUT_ANY_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_1.INIT" Source="FB_LABEL_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_1_2.INIT" Source="OUT_ANY_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_2.INIT" Source="FB_LABEL_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_1_3.INIT" Source="OUT_ANY_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_3.INIT" Source="FB_LABEL_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_0.INIT" Source="OUT_ANY_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_0_0.INIT" Source="SUBSCRIBE_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_0_1.INIT" Source="SUBSCRIBE_1_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_0_2.INIT" Source="SUBSCRIBE_1_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_0_3.INIT" Source="SUBSCRIBE_1_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2.REQ" Source="SUBSCRIBE_1_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY.REQ" Source="STRING2STRING_2.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_0.REQ" Source="SUBSCRIBE_1_0_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_0.REQ" Source="STRING2STRING_2_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_1.REQ" Source="SUBSCRIBE_1_0_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_1.REQ" Source="STRING2STRING_2_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_2.REQ" Source="SUBSCRIBE_1_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_2.REQ" Source="STRING2STRING_2_2.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_3.REQ" Source="SUBSCRIBE_1_0_3.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_3.REQ" Source="STRING2STRING_2_3.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_2_0.INIT" Source="FB_LABEL_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_4.INIT" Source="FB_LABEL_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_2_1.INIT" Source="OUT_ANY_4.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_5.INIT" Source="FB_LABEL_2_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_2_0_0.INIT" Source="FB_LABEL_2_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_6.INIT" Source="FB_LABEL_2_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_LABEL_2_1_0.INIT" Source="OUT_ANY_6.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_7.INIT" Source="FB_LABEL_2_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_1.INIT" Source="OUT_ANY_5.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_2.INIT" Source="SUBSCRIBE_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_3.REQ" Source="SUBSCRIBE_1_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_4.REQ" Source="STRING2STRING_3.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_4.REQ" Source="SUBSCRIBE_1_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_5.REQ" Source="STRING2STRING_4.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_3.INIT" Source="OUT_ANY_7.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_1_4.INIT" Source="SUBSCRIBE_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_5.REQ" Source="SUBSCRIBE_1_3.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_6.REQ" Source="STRING2STRING_5.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_6.REQ" Source="SUBSCRIBE_1_4.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_7.REQ" Source="STRING2STRING_6.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="STRING2STRING.IN" Source="IN_ANY.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2.SD_1" Source="STRING2STRING.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_0.IN" Source="IN_ANY_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2.SD_2" Source="STRING2STRING_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2.IN" Source="SUBSCRIBE_1_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY.IN" Source="STRING2STRING_2.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_0.IN" Source="SUBSCRIBE_1_0_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_0.IN" Source="STRING2STRING_2_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_1.IN" Source="SUBSCRIBE_1_0_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_1.IN" Source="STRING2STRING_2_1.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_2.IN" Source="SUBSCRIBE_1_0_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_2.IN" Source="STRING2STRING_2_2.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_2_3.IN" Source="SUBSCRIBE_1_0_3.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_3.IN" Source="STRING2STRING_2_3.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_3.IN" Source="SUBSCRIBE_1_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_4.IN" Source="STRING2STRING_3.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_4.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_5.IN" Source="STRING2STRING_4.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_5.IN" Source="SUBSCRIBE_1_3.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_6.IN" Source="STRING2STRING_5.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="STRING2STRING_6.IN" Source="SUBSCRIBE_1_4.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_ANY_7.IN" Source="STRING2STRING_6.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Application Name="SwitchStopperLifter">
+    <SubAppNetwork>
+      <FB Name="SwitchClient" Type="client" x="1330.0" y="570.0">
+        <Parameter Name="ID" Value="switch"/>
+        <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+        <Parameter Name="CHECKTIME" Value="T#10ms"/>
+      </FB>
+      <FB Name="E_TimeOut" Type="E_TimeOut" x="3135.0" y="95.0"/>
+      <FB Name="E_TimeOut_0" Type="E_TimeOut" x="2470.0" y="95.0"/>
+      <FB Name="SUBSCRIBE_2" Type="SUBSCRIBE_2" x="-285.0" y="760.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+      </FB>
+      <FB Name="LifterClient" Type="client" x="5415.0" y="570.0">
+        <Parameter Name="ID" Value="lifter"/>
+        <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+        <Parameter Name="CHECKTIME" Value="T#10ms"/>
+      </FB>
+      <FB Name="E_TimeOut_0_0" Type="E_TimeOut" x="4370.0" y="95.0"/>
+      <FB Name="StopperClient" Type="client" x="3705.0" y="570.0">
+        <Parameter Name="ID" Value="stopper"/>
+        <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+        <Parameter Name="CHECKTIME" Value="T#10ms"/>
+      </FB>
+      <FB Name="E_TimeOut_2" Type="E_TimeOut" x="4940.0" y="95.0"/>
+      <FB Name="E_SWITCH" Type="E_SWITCH" x="1615.0" y="2470.0">
+        <Parameter Name="G" Value="1"/>
+      </FB>
+      <FB Name="stopper" Type="stopper" x="2660.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="timeParam" Value="T#3s"/>
+      </FB>
+      <FB Name="lifter" Type="lifter" x="4560.0" y="2375.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="timeParam" Value="T#3s"/>
+      </FB>
+      <FB Name="E_TimeOut_2_0" Type="E_TimeOut" x="6080.0" y="95.0"/>
+      <FB Name="E_TimeOut_2_1" Type="E_TimeOut" x="6745.0" y="95.0"/>
+      <FB Name="E_TimeOut_2_2" Type="E_TimeOut" x="6080.0" y="3420.0"/>
+      <FB Name="E_TimeOut_2_3" Type="E_TimeOut" x="6745.0" y="3420.0"/>
+      <FB Name="F_BOOL_TO_STRING_0" Type="F_BOOL_TO_STRING" x="6365.0" y="2660.0"/>
+      <FB Name="F_BOOL_TO_STRING_0_0" Type="F_BOOL_TO_STRING" x="3610.0" y="2660.0"/>
+      <FB Name="E_TimeOut_2_0_0" Type="E_TimeOut" x="2755.0" y="3230.0"/>
+      <FB Name="STRING2STRING_1" Type="STRING2STRING" x="360.0" y="2170.0">
+        <Parameter Name="IN" Value="switch"/>
+      </FB>
+      <FB Name="PUBLISH_0" Type="PUBLISH_0" x="3610.0" y="3895.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%LifterPub%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_0" Type="SUBSCRIBE_0" x="2755.0" y="3895.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%PalletOnePub%"/>
+      </FB>
+      <FB Name="PUBLISH_0_0" Type="PUBLISH_0" x="4560.0" y="3895.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%StopperPub%"/>
+      </FB>
+      <FB Name="PUBLISH_1_0" Type="PUBLISH_1" x="1520.0" y="-665.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%switchclient%"/>
+      </FB>
+      <FB Name="PUBLISH_1_1" Type="PUBLISH_1" x="3990.0" y="-760.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%stopperclient%"/>
+      </FB>
+      <FB Name="PUBLISH_1_2" Type="PUBLISH_1" x="5890.0" y="-760.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%lifterclient%"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="SwitchClient.INIT" Source="SUBSCRIBE_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="StopperClient.INIT" Source="SwitchClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LifterClient.INIT" Source="StopperClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SWITCH.EI" Source="SwitchClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="lifter.UP_REQ" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="stopper.INIT" Source="LifterClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="lifter.INIT" Source="stopper.INITO" dx1="695.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_BOOL_TO_STRING_0.REQ" Source="lifter.Do_CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LifterClient.SEND" Source="F_BOOL_TO_STRING_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_BOOL_TO_STRING_0_0.REQ" Source="stopper.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="StopperClient.SEND" Source="F_BOOL_TO_STRING_0_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="stopper.DOWN_REQ" Source="lifter.DOWN_FINISHED" dx1="0.0" dx2="0.0" dy="135.0"/>
+        <Connection Destination="STRING2STRING_1.REQ" Source="lifter.DOWN_FINISHED" dx1="0.0" dx2="0.0" dy="770.0"/>
+        <Connection Destination="SwitchClient.SEND" Source="STRING2STRING_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_0.INIT" Source="lifter.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0.INIT" Source="SUBSCRIBE_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="lifter.DOWN_REQ" Source="SUBSCRIBE_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0.REQ" Source="lifter.UP_FINISHED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_0.INIT" Source="PUBLISH_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_0.REQ" Source="stopper.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_1.INIT" Source="PUBLISH_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_2.INIT" Source="PUBLISH_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_2.INIT" Source="PUBLISH_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_0.REQ" Source="SwitchClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_1.REQ" Source="StopperClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_2.REQ" Source="LifterClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="E_TimeOut.TimeOutSocket" Source="SwitchClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_0.TimeOutSocket" Source="SwitchClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SwitchClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SwitchClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LifterClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LifterClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_0_0.TimeOutSocket" Source="StopperClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2.TimeOutSocket" Source="StopperClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="StopperClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="StopperClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2_0.TimeOutSocket" Source="LifterClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2_1.TimeOutSocket" Source="LifterClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2_2.TimeOutSocket" Source="lifter.ATimeOut1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2_3.TimeOutSocket" Source="lifter.ATimeOut2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_BOOL_TO_STRING_0.IN" Source="lifter.QO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LifterClient.QI" Source="F_BOOL_TO_STRING_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_BOOL_TO_STRING_0_0.IN" Source="stopper.QO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="StopperClient.QI" Source="F_BOOL_TO_STRING_0_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_2_0_0.TimeOutSocket" Source="stopper.ATimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SwitchClient.QI" Source="STRING2STRING_1.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_0.SD_1" Source="SwitchClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_1.SD_1" Source="StopperClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_2.SD_1" Source="LifterClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Application Name="URCamera">
+    <SubAppNetwork>
+      <FB Name="UR2" Type="UR2" x="1440.0" y="1090.0">
+        <Parameter Name="QI" Value="1"/>
+      </FB>
+      <FB Name="URMSGjudge" Type="URMSGjudge" x="285.0" y="1235.0">
+        <Parameter Name="QI" Value="1"/>
+      </FB>
+      <FB Name="URMSGmonitoringRESULT" Type="URMSGmonitoring" x="1520.0" y="3420.0">
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="URClient" Type="client" x="1520.0" y="-95.0">
+        <Parameter Name="ID" Value="UR"/>
+        <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+        <Parameter Name="CHECKTIME" Value="T#10ms"/>
+      </FB>
+      <FB Name="E_TimeOut_1" Type="E_TimeOut" x="3435.0" y="-200.0"/>
+      <FB Name="E_TimeOut_3" Type="E_TimeOut" x="2850.0" y="-190.0"/>
+      <FB Name="Camera" Type="Camera" x="4370.0" y="1140.0">
+        <Parameter Name="QI" Value="1"/>
+      </FB>
+      <FB Name="CameraMonitoringCMD" Type="CameraMonitoring" x="4370.0" y="2660.0">
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="CameraClient" Type="client" x="4275.0" y="-190.0">
+        <Parameter Name="ID" Value="camera"/>
+        <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+        <Parameter Name="CHECKTIME" Value="T#10ms"/>
+      </FB>
+      <FB Name="E_TimeOut_4" Type="E_TimeOut" x="5605.0" y="285.0"/>
+      <FB Name="E_TimeOut_5" Type="E_TimeOut" x="5985.0" y="285.0"/>
+      <FB Name="SUBSCRIBE_2_0" Type="SUBSCRIBE_2" x="95.0" y="0.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_0_0" Type="SUBSCRIBE_0" x="285.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%LifterPub%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_0_1" Type="SUBSCRIBE_0" x="1330.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%StopperPub%"/>
+      </FB>
+      <FB Name="PUBLISH_1" Type="PUBLISH_1" x="2375.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URPub1%"/>
+      </FB>
+      <FB Name="PUBLISH_0_1" Type="PUBLISH_0" x="3325.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URPub2%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_2_1" Type="SUBSCRIBE_2" x="4275.0" y="-1045.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%FindNextPub%"/>
+      </FB>
+      <FB Name="PUBLISH_1_3" Type="PUBLISH_1" x="5320.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URclient%"/>
+      </FB>
+      <FB Name="PUBLISH_1_4" Type="PUBLISH_1" x="6270.0" y="-950.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%Cameraclient%"/>
+      </FB>
+      <FB Name="URMSGmonitoringCMD" Type="URMSGmonitoring" x="1615.0" y="2565.0">
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="CameraMonitoringRESULT" Type="CameraMonitoring" x="4370.0" y="3420.0">
+        <Parameter Name="IVAL" Value="..."/>
+      </FB>
+      <FB Name="PUBLISH_1_5" Type="PUBLISH_1" x="2945.0" y="2660.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URMoniteringCMD%"/>
+      </FB>
+      <FB Name="PUBLISH_1_6" Type="PUBLISH_1" x="2945.0" y="3610.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URMoniteringRESULT%"/>
+      </FB>
+      <FB Name="PUBLISH_1_7" Type="PUBLISH_1" x="5700.0" y="2660.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%CameraMornitoringCMD%"/>
+      </FB>
+      <FB Name="PUBLISH_1_8" Type="PUBLISH_1" x="5985.0" y="3515.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%CameraMornitoringResult%"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="URClient.INIT" Source="SUBSCRIBE_2_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraClient.INIT" Source="URClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGjudge.REQ" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGjudge.INIT" Source="CameraClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.INIT" Source="URMSGjudge.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="Camera.INIT" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.URinPalletPosition" Source="URMSGjudge.URinPalletPosition" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.GraspDone" Source="URMSGjudge.GraspDone" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.URinMaterialPosition" Source="URMSGjudge.URinMaterialPosition" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.PalletIn" Source="SUBSCRIBE_0_0.IND" dx1="380.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_0_1.INIT" Source="SUBSCRIBE_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.INIT" Source="SUBSCRIBE_0_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URClient.SEND" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="Camera.TakePhoto" Source="UR2.TakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraClient.SEND" Source="Camera.DoTakePhoto" dx1="-1015.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="Camera.RECVPhotoMSG" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1.INIT" Source="SUBSCRIBE_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_1.INIT" Source="PUBLISH_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1.REQ" Source="UR2.SendPalletMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_1.REQ" Source="UR2.UpdatePallet" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_2_1.INIT" Source="PUBLISH_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.URGrasp" Source="SUBSCRIBE_2_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.RecvCameraMSG" Source="Camera.SendPhotoMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_3.INIT" Source="SUBSCRIBE_2_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_4.INIT" Source="PUBLISH_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_3.REQ" Source="URClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_4.REQ" Source="CameraClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SUBSCRIBE_2_0.INIT" Source="PUBLISH_1_4.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringCMD.REQ" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringRESULT.RESET" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringRESULT.REQ" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringCMD.RESET" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringCMD.REQ" Source="Camera.DoTakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringRESULT.REQ" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringRESULT.RESET" Source="Camera.DoTakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringCMD.RESET" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_5.INIT" Source="SUBSCRIBE_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_6.INIT" Source="PUBLISH_1_5.INITO" dx1="0.0" dx2="0.0" dy="230.0"/>
+        <Connection Destination="PUBLISH_1_7.INIT" Source="PUBLISH_1_6.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_8.INIT" Source="PUBLISH_1_7.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_5.REQ" Source="URMSGmonitoringCMD.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_6.REQ" Source="URMSGmonitoringRESULT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_7.REQ" Source="CameraMonitoringCMD.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_8.REQ" Source="CameraMonitoringRESULT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringCMD.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringRESULT.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringCMD.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringRESULT.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="E_TimeOut_3.TimeOutSocket" Source="URClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_1.TimeOutSocket" Source="URClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_4.TimeOutSocket" Source="CameraClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_TimeOut_5.TimeOutSocket" Source="CameraClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URClient.IP" Source="SUBSCRIBE_2_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URClient.PORT" Source="SUBSCRIBE_2_0.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraClient.IP" Source="SUBSCRIBE_2_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraClient.PORT" Source="SUBSCRIBE_2_0.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGjudge.URMSG" Source="URClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URClient.QI" Source="UR2.toURMSG" dx1="0.0" dx2="0.0" dy="350.0"/>
+        <Connection Destination="Camera.PhotoNumIn" Source="UR2.TakePhotoNum" dx1="490.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraClient.QI" Source="Camera.PhotoNumOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="Camera.PhotoMSGIn" Source="CameraClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.PalletMSGIN" Source="Camera.PhotoMSGOut1" dx1="0.0" dx2="0.0" dy="565.0"/>
+        <Connection Destination="UR2.MaterialMSG" Source="Camera.PhotoMSGOut2" dx1="0.0" dx2="0.0" dy="355.0"/>
+        <Connection Destination="PUBLISH_1.SD_1" Source="UR2.PalletMSGOUT" dx1="210.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.URGraspModelPosition" Source="SUBSCRIBE_2_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="UR2.URGraspModelColour" Source="SUBSCRIBE_2_1.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_3.SD_1" Source="URClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_4.SD_1" Source="CameraClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringCMD.MSGIN" Source="UR2.toURMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="URMSGmonitoringRESULT.MSGIN" Source="URClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringCMD.MSGIN" Source="Camera.PhotoNumOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="CameraMonitoringRESULT.MSGIN" Source="CameraClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_5.SD_1" Source="URMSGmonitoringCMD.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_6.SD_1" Source="URMSGmonitoringRESULT.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_7.SD_1" Source="CameraMonitoringCMD.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_1_8.SD_1" Source="CameraMonitoringRESULT.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Application Name="DataBaseOperation">
+    <SubAppNetwork>
+      <FB Name="sqlUpdateMaterial" Type="sqlUpdateMaterial" x="4275.0" y="1140.0"/>
+      <FB Name="splitCameraInfo" Type="splitCameraInfo" x="380.0" y="1235.0"/>
+      <FB Name="findNext" Type="findNext" x="2660.0" y="1140.0"/>
+      <FB Name="palletOne" Type="palletOne" x="1520.0" y="1140.0"/>
+      <FB Name="SUBSCRIBE_0_2" Type="SUBSCRIBE_0" x="1805.0" y="285.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URPub2%"/>
+      </FB>
+      <FB Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="475.0" y="285.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%URPub1%"/>
+      </FB>
+      <FB Name="PUBLISH_2_0" Type="PUBLISH_2" x="3895.0" y="285.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%FindNextPub%"/>
+      </FB>
+      <FB Name="PUBLISH_0_2" Type="PUBLISH_0" x="2850.0" y="285.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="%PalletOnePub%"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="sqlUpdateMaterial.INIT" Source="findNext.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.INIT" Source="splitCameraInfo.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="findNext.INIT" Source="palletOne.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.CAMERAED" Source="splitCameraInfo.DONE" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="findNext.FINDNEXT" Source="palletOne.FINDENEXT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="sqlUpdateMaterial.ATTEMPTCATCH" Source="findNext.CATCH" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.PASS" Source="findNext.PASS" dx1="0.0" dx2="0.0" dy="850.0"/>
+        <Connection Destination="SUBSCRIBE_0_2.INIT" Source="SUBSCRIBE_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="splitCameraInfo.CAMERAED" Source="SUBSCRIBE_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.CATCHED" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="sqlUpdateMaterial.CATCHED" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2_0.REQ" Source="findNext.CATCH" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_2.INIT" Source="SUBSCRIBE_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2_0.INIT" Source="PUBLISH_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="splitCameraInfo.INIT" Source="PUBLISH_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_0_2.REQ" Source="palletOne.FULL" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="palletOne.C1" Source="splitCameraInfo.C1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.C2" Source="splitCameraInfo.C2" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.C3" Source="splitCameraInfo.C3" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="palletOne.C4" Source="splitCameraInfo.C4" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="sqlUpdateMaterial.MID" Source="findNext.MID" dx1="360.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2_0.SD_1" Source="findNext.MODEL" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="PUBLISH_2_0.SD_2" Source="findNext.COLOUR" dx1="255.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="splitCameraInfo.INFO" Source="SUBSCRIBE_1.RD_1" dx1="-570.0" dx2="-280.0" dy="-130.0"/>
+        <Connection Destination="findNext.FINDPOSITION" Source="palletOne.FINDPOSITION" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="3410.0" y="1445.0">
+    <Attribute Name="Color" Value="202,72,223"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;192.168.1.100:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="sqlUpdateMaterial" Type="sqlUpdateMaterial" x="4275.0" y="1140.0"/>
+        <FB Name="splitCameraInfo" Type="splitCameraInfo" x="380.0" y="1235.0"/>
+        <FB Name="findNext" Type="findNext" x="2660.0" y="1140.0"/>
+        <FB Name="palletOne" Type="palletOne" x="1520.0" y="1140.0"/>
+        <FB Name="SUBSCRIBE_0_2" Type="SUBSCRIBE_0" x="1805.0" y="285.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URPub2%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="475.0" y="285.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URPub1%"/>
+        </FB>
+        <FB Name="PUBLISH_2_0" Type="PUBLISH_2" x="3895.0" y="285.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%FindNextPub%"/>
+        </FB>
+        <FB Name="PUBLISH_0_2" Type="PUBLISH_0" x="2850.0" y="285.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%PalletOnePub%"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="sqlUpdateMaterial.INIT" Source="findNext.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="sqlUpdateMaterial.ATTEMPTCATCH" Source="findNext.CATCH" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.INIT" Source="splitCameraInfo.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.CAMERAED" Source="splitCameraInfo.DONE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.PASS" Source="findNext.PASS" dx1="0.0" dx2="0.0" dy="850.0"/>
+          <Connection Destination="findNext.INIT" Source="palletOne.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="findNext.FINDNEXT" Source="palletOne.FINDENEXT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.CATCHED" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="sqlUpdateMaterial.CATCHED" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_2.INIT" Source="SUBSCRIBE_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="splitCameraInfo.CAMERAED" Source="SUBSCRIBE_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_2_0.REQ" Source="findNext.CATCH" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="splitCameraInfo.INIT" Source="PUBLISH_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_2.INIT" Source="SUBSCRIBE_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_2.REQ" Source="palletOne.FULL" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_2_0.INIT" Source="PUBLISH_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="sqlUpdateMaterial.MID" Source="findNext.MID" dx1="360.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.C1" Source="splitCameraInfo.C1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.C2" Source="splitCameraInfo.C2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.C3" Source="splitCameraInfo.C3" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="palletOne.C4" Source="splitCameraInfo.C4" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="splitCameraInfo.INFO" Source="SUBSCRIBE_1.RD_1" dx1="-570.0" dx2="-280.0" dy="-130.0"/>
+          <Connection Destination="PUBLISH_2_0.SD_1" Source="findNext.MODEL" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_2_0.SD_2" Source="findNext.COLOUR" dx1="255.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="findNext.FINDPOSITION" Source="palletOne.FINDPOSITION" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Name="FBRT_WINDOW" Type="FBRT_WINDOW" x="0.0" y="1140.0">
+    <Attribute Name="Color" Value="52,231,154"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;192.168.1.100:61505&quot;"/>
+    <Resource Name="ConnectSet" Type="PANEL_RESOURCE">
+      <FBNetwork>
+        <FB Name="FB_LABEL" Type="FB_LABEL" x="855.0" y="380.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Server IP:"/>
+        </FB>
+        <FB Name="PUBLISH_2" Type="PUBLISH_2" x="5510.0" y="570.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+        </FB>
+        <FB Name="FB_LABEL_0" Type="FB_LABEL" x="2565.0" y="380.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Server Port:"/>
+        </FB>
+        <FB Name="STRING2STRING_0" Type="STRING2STRING" x="3990.0" y="950.0"/>
+        <FB Name="IN_ANY" Type="IN_ANY" x="1805.0" y="380.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="127.0.0.1"/>
+        </FB>
+        <FB Name="STRING2STRING" Type="STRING2STRING" x="2470.0" y="1045.0"/>
+        <FB Name="IN_EVENT" Type="IN_EVENT" x="855.0" y="1045.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Connection"/>
+        </FB>
+        <FB Name="IN_ANY_0" Type="IN_ANY" x="3325.0" y="475.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="8888"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="PUBLISH_2.REQ" Source="STRING2STRING_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_ANY.INIT" Source="FB_LABEL.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_0.INIT" Source="IN_ANY.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING.REQ" Source="IN_ANY.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT.INIT" Source="PUBLISH_2.INITO" dx1="0.0" dx2="0.0" dy="1005.0"/>
+          <Connection Destination="IN_ANY.REQ" Source="IN_EVENT.IND" dx1="280.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_ANY_0.INIT" Source="FB_LABEL_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_ANY_0.REQ" Source="STRING2STRING.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_2.INIT" Source="IN_ANY_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_0.REQ" Source="IN_ANY_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="PUBLISH_2.SD_2" Source="STRING2STRING_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING.IN" Source="IN_ANY.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_2.SD_1" Source="STRING2STRING.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_0.IN" Source="IN_ANY_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+    <Resource Name="ClientConnection" Type="PANEL_RESOURCE">
+      <FBNetwork>
+        <FB Name="OUT_ANY_2" Type="OUT_ANY" x="5985.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="STRING2STRING_2_2" Type="STRING2STRING" x="5890.0" y="3610.0"/>
+        <FB Name="STRING2STRING_2_1" Type="STRING2STRING" x="4370.0" y="3610.0"/>
+        <FB Name="STRING2STRING_2_0" Type="STRING2STRING" x="3040.0" y="3610.0"/>
+        <FB Name="FB_LABEL_1_0" Type="FB_LABEL" x="2470.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="stopper:"/>
+        </FB>
+        <FB Name="FB_LABEL_1_1" Type="FB_LABEL" x="3895.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="lifter:"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0_2" Type="SUBSCRIBE_1" x="5320.0" y="3325.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URclient%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0_1" Type="SUBSCRIBE_1" x="3800.0" y="3230.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%lifterclient%"/>
+        </FB>
+        <FB Name="OUT_ANY_0" Type="OUT_ANY" x="3135.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="STRING2STRING_2" Type="STRING2STRING" x="1520.0" y="3420.0"/>
+        <FB Name="OUT_ANY_1" Type="OUT_ANY" x="4560.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="FB_LABEL_1_2" Type="FB_LABEL" x="5320.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="UR:"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0_3" Type="SUBSCRIBE_1" x="6650.0" y="3230.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%Cameraclient%"/>
+        </FB>
+        <FB Name="OUT_ANY" Type="OUT_ANY" x="1710.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="FB_LABEL_1" Type="FB_LABEL" x="950.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="switch:"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0_0" Type="SUBSCRIBE_1" x="2470.0" y="3230.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%stopperclient%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0" Type="SUBSCRIBE_1" x="855.0" y="3135.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%switchclient%"/>
+        </FB>
+        <FB Name="FB_LABEL_1_3" Type="FB_LABEL" x="6745.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="camera:"/>
+        </FB>
+        <FB Name="OUT_ANY_3" Type="OUT_ANY" x="7315.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="STRING2STRING_2_3" Type="STRING2STRING" x="7220.0" y="3515.0"/>
+        <EventConnections>
+          <Connection Destination="OUT_ANY_2.REQ" Source="STRING2STRING_2_2.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_2.REQ" Source="SUBSCRIBE_1_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0_2.INIT" Source="SUBSCRIBE_1_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_1.REQ" Source="SUBSCRIBE_1_0_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_0.INIT" Source="FB_LABEL_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_0.REQ" Source="STRING2STRING_2_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1_1.INIT" Source="OUT_ANY_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_1.INIT" Source="FB_LABEL_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_1.REQ" Source="STRING2STRING_2_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1_2.INIT" Source="OUT_ANY_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_2.INIT" Source="FB_LABEL_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0_3.INIT" Source="SUBSCRIBE_1_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY.REQ" Source="STRING2STRING_2.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1_0.INIT" Source="OUT_ANY.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY.INIT" Source="FB_LABEL_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0_1.INIT" Source="SUBSCRIBE_1_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_0.REQ" Source="SUBSCRIBE_1_0_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0_0.INIT" Source="SUBSCRIBE_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2.REQ" Source="SUBSCRIBE_1_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1_3.INIT" Source="OUT_ANY_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_3.INIT" Source="FB_LABEL_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0.INIT" Source="OUT_ANY_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_3.REQ" Source="SUBSCRIBE_1_0_3.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_3.REQ" Source="STRING2STRING_2_3.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="OUT_ANY_2.IN" Source="STRING2STRING_2_2.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_2.IN" Source="SUBSCRIBE_1_0_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_1.IN" Source="SUBSCRIBE_1_0_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_0.IN" Source="STRING2STRING_2_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_1.IN" Source="STRING2STRING_2_1.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY.IN" Source="STRING2STRING_2.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_0.IN" Source="SUBSCRIBE_1_0_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2.IN" Source="SUBSCRIBE_1_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_2_3.IN" Source="SUBSCRIBE_1_0_3.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_3.IN" Source="STRING2STRING_2_3.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+    <Resource Name="MachineState" Type="PANEL_RESOURCE">
+      <FBNetwork>
+        <FB Name="FB_LABEL_2" Type="FB_LABEL" x="855.0" y="4370.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="UR State Monitoring :"/>
+        </FB>
+        <FB Name="FB_LABEL_2_0" Type="FB_LABEL" x="1900.0" y="4370.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Command:"/>
+        </FB>
+        <FB Name="FB_LABEL_2_1" Type="FB_LABEL" x="3515.0" y="4370.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Result:"/>
+        </FB>
+        <FB Name="FB_LABEL_2_2" Type="FB_LABEL" x="760.0" y="6840.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Camera State Monitoring :"/>
+        </FB>
+        <FB Name="FB_LABEL_2_0_0" Type="FB_LABEL" x="1900.0" y="6840.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Command:"/>
+        </FB>
+        <FB Name="FB_LABEL_2_1_0" Type="FB_LABEL" x="3610.0" y="6840.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="Result:"/>
+        </FB>
+        <FB Name="OUT_ANY_4" Type="OUT_ANY" x="2660.0" y="4370.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="OUT_ANY_5" Type="OUT_ANY" x="4465.0" y="4370.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="OUT_ANY_6" Type="OUT_ANY" x="2660.0" y="6840.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="OUT_ANY_7" Type="OUT_ANY" x="4465.0" y="6840.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="TYPE" Value="STRING"/>
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_1" Type="SUBSCRIBE_1" x="1615.0" y="5225.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URMoniteringCMD%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="3610.0" y="5225.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URMoniteringRESULT%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_3" Type="SUBSCRIBE_1" x="1710.0" y="7790.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%CameraMornitoringCMD%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_4" Type="SUBSCRIBE_1" x="3515.0" y="7790.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%CameraMornitoringResult%"/>
+        </FB>
+        <FB Name="STRING2STRING_3" Type="STRING2STRING" x="2560.0" y="5660.0"/>
+        <FB Name="STRING2STRING_4" Type="STRING2STRING" x="4680.0" y="5715.0"/>
+        <FB Name="STRING2STRING_5" Type="STRING2STRING" x="2470.0" y="8075.0"/>
+        <FB Name="STRING2STRING_6" Type="STRING2STRING" x="4465.0" y="8075.0"/>
+        <EventConnections>
+          <Connection Destination="FB_LABEL_2_0.INIT" Source="FB_LABEL_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2_0_0.INIT" Source="FB_LABEL_2_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_4.INIT" Source="FB_LABEL_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2_1.INIT" Source="OUT_ANY_4.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_5.INIT" Source="FB_LABEL_2_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_6.INIT" Source="FB_LABEL_2_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2_1_0.INIT" Source="OUT_ANY_6.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_7.INIT" Source="FB_LABEL_2_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_1.INIT" Source="OUT_ANY_5.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_2.INIT" Source="SUBSCRIBE_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_3.INIT" Source="OUT_ANY_7.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_4.INIT" Source="SUBSCRIBE_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_3.REQ" Source="SUBSCRIBE_1_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_4.REQ" Source="STRING2STRING_3.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_4.REQ" Source="SUBSCRIBE_1_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_5.REQ" Source="STRING2STRING_4.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_5.REQ" Source="SUBSCRIBE_1_3.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_6.REQ" Source="STRING2STRING_5.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_6.REQ" Source="SUBSCRIBE_1_4.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_7.REQ" Source="STRING2STRING_6.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_LABEL_2_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="STRING2STRING_3.IN" Source="SUBSCRIBE_1_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_4.IN" Source="STRING2STRING_3.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_4.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_5.IN" Source="STRING2STRING_4.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_5.IN" Source="SUBSCRIBE_1_3.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_6.IN" Source="STRING2STRING_5.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_6.IN" Source="SUBSCRIBE_1_4.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_ANY_7.IN" Source="STRING2STRING_6.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Name="RaspberryPI_1" Type="RaspberryPI" x="1045.0" y="2280.0">
+    <Attribute Name="Color" Value="192,83,41"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;192.168.1.101:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="UR2" Type="UR2" x="1440.0" y="1090.0">
+          <Parameter Name="QI" Value="1"/>
+        </FB>
+        <FB Name="URMSGjudge" Type="URMSGjudge" x="285.0" y="1235.0">
+          <Parameter Name="QI" Value="1"/>
+        </FB>
+        <FB Name="URMSGmonitoringRESULT" Type="URMSGmonitoring" x="3040.0" y="2660.0">
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="URClient" Type="client" x="1520.0" y="-190.0">
+          <Parameter Name="ID" Value="UR"/>
+          <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+          <Parameter Name="CHECKTIME" Value="T#10ms"/>
+        </FB>
+        <FB Name="E_TimeOut_1" Type="E_TimeOut" x="3435.0" y="-200.0"/>
+        <FB Name="E_TimeOut_3" Type="E_TimeOut" x="2850.0" y="-190.0"/>
+        <FB Name="Camera" Type="Camera" x="4370.0" y="1140.0">
+          <Parameter Name="QI" Value="1"/>
+        </FB>
+        <FB Name="CameraMonitoringCMD" Type="CameraMonitoring" x="4560.0" y="2660.0">
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="CameraClient" Type="client" x="4275.0" y="-190.0">
+          <Parameter Name="ID" Value="camera"/>
+          <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+          <Parameter Name="CHECKTIME" Value="T#10ms"/>
+        </FB>
+        <FB Name="E_TimeOut_4" Type="E_TimeOut" x="5605.0" y="285.0"/>
+        <FB Name="E_TimeOut_5" Type="E_TimeOut" x="5985.0" y="285.0"/>
+        <FB Name="SUBSCRIBE_2_0" Type="SUBSCRIBE_2" x="285.0" y="0.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0_0" Type="SUBSCRIBE_0" x="285.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%LifterPub%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0_1" Type="SUBSCRIBE_0" x="1330.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%StopperPub%"/>
+        </FB>
+        <FB Name="PUBLISH_1" Type="PUBLISH_1" x="2375.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URPub1%"/>
+        </FB>
+        <FB Name="PUBLISH_0_1" Type="PUBLISH_0" x="3325.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URPub2%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_2_1" Type="SUBSCRIBE_2" x="4275.0" y="-1045.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%FindNextPub%"/>
+        </FB>
+        <FB Name="PUBLISH_1_3" Type="PUBLISH_1" x="5320.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URclient%"/>
+        </FB>
+        <FB Name="PUBLISH_1_4" Type="PUBLISH_1" x="6175.0" y="-950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%Cameraclient%"/>
+        </FB>
+        <FB Name="CameraMonitoringRESULT" Type="CameraMonitoring" x="4370.0" y="3420.0">
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="URMSGmonitoringCMD" Type="URMSGmonitoring" x="1615.0" y="2565.0">
+          <Parameter Name="IVAL" Value="..."/>
+        </FB>
+        <FB Name="PUBLISH_1_5" Type="PUBLISH_1" x="2945.0" y="2660.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URMoniteringCMD%"/>
+        </FB>
+        <FB Name="PUBLISH_1_6" Type="PUBLISH_1" x="2945.0" y="3610.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%URMoniteringRESULT%"/>
+        </FB>
+        <FB Name="PUBLISH_1_7" Type="PUBLISH_1" x="5700.0" y="2660.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%CameraMornitoringCMD%"/>
+        </FB>
+        <FB Name="PUBLISH_1_8" Type="PUBLISH_1" x="5700.0" y="3515.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%CameraMornitoringResult%"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="UR2.INIT" Source="URMSGjudge.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.URinPalletPosition" Source="URMSGjudge.URinPalletPosition" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.URinMaterialPosition" Source="URMSGjudge.URinMaterialPosition" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.GraspDone" Source="URMSGjudge.GraspDone" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URClient.SEND" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGjudge.REQ" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="Camera.INIT" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="Camera.TakePhoto" Source="UR2.TakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.RecvCameraMSG" Source="Camera.SendPhotoMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraClient.INIT" Source="URClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraClient.SEND" Source="Camera.DoTakePhoto" dx1="-1015.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGjudge.INIT" Source="CameraClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="Camera.RECVPhotoMSG" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URClient.INIT" Source="SUBSCRIBE_2_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.PalletIn" Source="SUBSCRIBE_0_0.IND" dx1="380.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_1.INIT" Source="SUBSCRIBE_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.INIT" Source="SUBSCRIBE_0_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.INIT" Source="SUBSCRIBE_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.REQ" Source="UR2.SendPalletMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_1.INIT" Source="PUBLISH_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_1.REQ" Source="UR2.UpdatePallet" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_2_1.INIT" Source="PUBLISH_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.URGrasp" Source="SUBSCRIBE_2_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_3.INIT" Source="SUBSCRIBE_2_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_3.REQ" Source="URClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_4.INIT" Source="PUBLISH_1_3.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_4.REQ" Source="CameraClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_2_0.INIT" Source="PUBLISH_1_4.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringRESULT.RESET" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringRESULT.REQ" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringCMD.REQ" Source="Camera.DoTakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringCMD.RESET" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringRESULT.REQ" Source="CameraClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringRESULT.RESET" Source="Camera.DoTakePhoto" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringCMD.REQ" Source="UR2.UROperation" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringCMD.RESET" Source="URClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_5.INIT" Source="SUBSCRIBE_2_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_5.REQ" Source="URMSGmonitoringCMD.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_6.INIT" Source="PUBLISH_1_5.INITO" dx1="0.0" dx2="0.0" dy="230.0"/>
+          <Connection Destination="PUBLISH_1_6.REQ" Source="URMSGmonitoringRESULT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_7.INIT" Source="PUBLISH_1_6.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_7.REQ" Source="CameraMonitoringCMD.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_8.INIT" Source="PUBLISH_1_7.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_8.REQ" Source="CameraMonitoringRESULT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringCMD.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringRESULT.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringCMD.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringRESULT.RESET" Source="UR2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="URClient.QI" Source="UR2.toURMSG" dx1="0.0" dx2="0.0" dy="350.0"/>
+          <Connection Destination="URMSGjudge.URMSG" Source="URClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_1.TimeOutSocket" Source="URClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_3.TimeOutSocket" Source="URClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="Camera.PhotoNumIn" Source="UR2.TakePhotoNum" dx1="490.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.PalletMSGIN" Source="Camera.PhotoMSGOut1" dx1="0.0" dx2="0.0" dy="565.0"/>
+          <Connection Destination="UR2.MaterialMSG" Source="Camera.PhotoMSGOut2" dx1="0.0" dx2="0.0" dy="355.0"/>
+          <Connection Destination="CameraClient.QI" Source="Camera.PhotoNumOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="Camera.PhotoMSGIn" Source="CameraClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_4.TimeOutSocket" Source="CameraClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_5.TimeOutSocket" Source="CameraClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URClient.IP" Source="SUBSCRIBE_2_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraClient.IP" Source="SUBSCRIBE_2_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URClient.PORT" Source="SUBSCRIBE_2_0.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraClient.PORT" Source="SUBSCRIBE_2_0.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.SD_1" Source="UR2.PalletMSGOUT" dx1="210.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.URGraspModelPosition" Source="SUBSCRIBE_2_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UR2.URGraspModelColour" Source="SUBSCRIBE_2_1.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_3.SD_1" Source="URClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_4.SD_1" Source="CameraClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringRESULT.MSGIN" Source="URClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringCMD.MSGIN" Source="Camera.PhotoNumOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="CameraMonitoringRESULT.MSGIN" Source="CameraClient.QO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="URMSGmonitoringCMD.MSGIN" Source="UR2.toURMSG" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_5.SD_1" Source="URMSGmonitoringCMD.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_6.SD_1" Source="URMSGmonitoringRESULT.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_7.SD_1" Source="CameraMonitoringCMD.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_8.SD_1" Source="CameraMonitoringRESULT.MSGOUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Name="RaspberryPI_2" Type="RaspberryPI" x="2470.0" y="2280.0">
+    <Attribute Name="Color" Value="114,116,233"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;192.168.1.102:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="SwitchClient" Type="client" x="1330.0" y="570.0">
+          <Parameter Name="ID" Value="switch"/>
+          <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+          <Parameter Name="CHECKTIME" Value="T#10ms"/>
+        </FB>
+        <FB Name="E_TimeOut" Type="E_TimeOut" x="3135.0" y="95.0"/>
+        <FB Name="E_TimeOut_0" Type="E_TimeOut" x="2470.0" y="95.0"/>
+        <FB Name="SUBSCRIBE_2" Type="SUBSCRIBE_2" x="-285.0" y="760.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%NetGateServerAddress%"/>
+        </FB>
+        <FB Name="LifterClient" Type="client" x="5415.0" y="570.0">
+          <Parameter Name="ID" Value="lifter"/>
+          <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+          <Parameter Name="CHECKTIME" Value="T#10ms"/>
+        </FB>
+        <FB Name="E_TimeOut_0_0" Type="E_TimeOut" x="4370.0" y="95.0"/>
+        <FB Name="StopperClient" Type="client" x="3705.0" y="570.0">
+          <Parameter Name="ID" Value="stopper"/>
+          <Parameter Name="CONNECTTIME" Value="T#3000ms"/>
+          <Parameter Name="CHECKTIME" Value="T#10ms"/>
+        </FB>
+        <FB Name="E_TimeOut_2" Type="E_TimeOut" x="4940.0" y="95.0"/>
+        <FB Name="E_SWITCH" Type="E_SWITCH" x="1615.0" y="2470.0">
+          <Parameter Name="G" Value="1"/>
+        </FB>
+        <FB Name="stopper" Type="stopper" x="2660.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="timeParam" Value="T#3s"/>
+        </FB>
+        <FB Name="lifter" Type="lifter" x="4560.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="timeParam" Value="T#3s"/>
+        </FB>
+        <FB Name="E_TimeOut_2_0" Type="E_TimeOut" x="6080.0" y="95.0"/>
+        <FB Name="E_TimeOut_2_1" Type="E_TimeOut" x="6745.0" y="95.0"/>
+        <FB Name="E_TimeOut_2_2" Type="E_TimeOut" x="6080.0" y="3420.0"/>
+        <FB Name="E_TimeOut_2_3" Type="E_TimeOut" x="6745.0" y="3420.0"/>
+        <FB Name="F_BOOL_TO_STRING_0" Type="F_BOOL_TO_STRING" x="6365.0" y="2660.0"/>
+        <FB Name="F_BOOL_TO_STRING_0_0" Type="F_BOOL_TO_STRING" x="3610.0" y="2660.0"/>
+        <FB Name="E_TimeOut_2_0_0" Type="E_TimeOut" x="2755.0" y="3230.0"/>
+        <FB Name="STRING2STRING_1" Type="STRING2STRING" x="360.0" y="2170.0">
+          <Parameter Name="IN" Value="switch"/>
+        </FB>
+        <FB Name="PUBLISH_0" Type="PUBLISH_0" x="3610.0" y="3895.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%LifterPub%"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0" Type="SUBSCRIBE_0" x="2755.0" y="3895.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%PalletOnePub%"/>
+        </FB>
+        <FB Name="PUBLISH_0_0" Type="PUBLISH_0" x="4560.0" y="3895.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%StopperPub%"/>
+        </FB>
+        <FB Name="PUBLISH_1_0" Type="PUBLISH_1" x="1520.0" y="-665.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%switchclient%"/>
+        </FB>
+        <FB Name="PUBLISH_1_1" Type="PUBLISH_1" x="3990.0" y="-760.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%stopperclient%"/>
+        </FB>
+        <FB Name="PUBLISH_1_2" Type="PUBLISH_1" x="5890.0" y="-760.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="%lifterclient%"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="SwitchClient.INIT" Source="SUBSCRIBE_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="StopperClient.INIT" Source="SwitchClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LifterClient.INIT" Source="StopperClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SWITCH.EI" Source="SwitchClient.RECEIVED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="stopper.INIT" Source="LifterClient.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="lifter.INIT" Source="stopper.INITO" dx1="695.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="lifter.UP_REQ" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="stopper.DOWN_REQ" Source="lifter.DOWN_FINISHED" dx1="0.0" dx2="0.0" dy="135.0"/>
+          <Connection Destination="F_BOOL_TO_STRING_0.REQ" Source="lifter.Do_CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LifterClient.SEND" Source="F_BOOL_TO_STRING_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_BOOL_TO_STRING_0_0.REQ" Source="stopper.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="StopperClient.SEND" Source="F_BOOL_TO_STRING_0_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="STRING2STRING_1.REQ" Source="lifter.DOWN_FINISHED" dx1="0.0" dx2="0.0" dy="770.0"/>
+          <Connection Destination="SwitchClient.SEND" Source="STRING2STRING_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0.REQ" Source="lifter.UP_FINISHED" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0.INIT" Source="lifter.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0.INIT" Source="SUBSCRIBE_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="lifter.DOWN_REQ" Source="SUBSCRIBE_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_0.INIT" Source="PUBLISH_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_0.REQ" Source="stopper.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.REQ" Source="SwitchClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.INIT" Source="PUBLISH_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.REQ" Source="StopperClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.INIT" Source="PUBLISH_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.REQ" Source="LifterClient.STATE" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_2.INIT" Source="PUBLISH_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_TimeOut.TimeOutSocket" Source="SwitchClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_0.TimeOutSocket" Source="SwitchClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SwitchClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SwitchClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LifterClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LifterClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="StopperClient.IP" Source="SUBSCRIBE_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="StopperClient.PORT" Source="SUBSCRIBE_2.RD_2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_0_0.TimeOutSocket" Source="StopperClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2.TimeOutSocket" Source="StopperClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2_0.TimeOutSocket" Source="LifterClient.ConnectTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2_1.TimeOutSocket" Source="LifterClient.CheckTimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2_2.TimeOutSocket" Source="lifter.ATimeOut1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2_3.TimeOutSocket" Source="lifter.ATimeOut2" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_BOOL_TO_STRING_0.IN" Source="lifter.QO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LifterClient.QI" Source="F_BOOL_TO_STRING_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_BOOL_TO_STRING_0_0.IN" Source="stopper.QO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="StopperClient.QI" Source="F_BOOL_TO_STRING_0_0.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_TimeOut_2_0_0.TimeOutSocket" Source="stopper.ATimeOut" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SwitchClient.QI" Source="STRING2STRING_1.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.SD_1" Source="SwitchClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.SD_1" Source="StopperClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.SD_1" Source="LifterClient.RESULT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="HMI.FB_LABEL" To="FBRT_WINDOW.ConnectSet.FB_LABEL"/>
+  <Mapping From="HMI.FB_LABEL_0" To="FBRT_WINDOW.ConnectSet.FB_LABEL_0"/>
+  <Mapping From="HMI.IN_ANY" To="FBRT_WINDOW.ConnectSet.IN_ANY"/>
+  <Mapping From="HMI.IN_ANY_0" To="FBRT_WINDOW.ConnectSet.IN_ANY_0"/>
+  <Mapping From="HMI.PUBLISH_2" To="FBRT_WINDOW.ConnectSet.PUBLISH_2"/>
+  <Mapping From="HMI.STRING2STRING" To="FBRT_WINDOW.ConnectSet.STRING2STRING"/>
+  <Mapping From="HMI.STRING2STRING_0" To="FBRT_WINDOW.ConnectSet.STRING2STRING_0"/>
+  <Mapping From="HMI.IN_EVENT" To="FBRT_WINDOW.ConnectSet.IN_EVENT"/>
+  <Mapping From="HMI.FB_LABEL_1" To="FBRT_WINDOW.ClientConnection.FB_LABEL_1"/>
+  <Mapping From="HMI.FB_LABEL_1_0" To="FBRT_WINDOW.ClientConnection.FB_LABEL_1_0"/>
+  <Mapping From="HMI.FB_LABEL_1_1" To="FBRT_WINDOW.ClientConnection.FB_LABEL_1_1"/>
+  <Mapping From="HMI.FB_LABEL_1_2" To="FBRT_WINDOW.ClientConnection.FB_LABEL_1_2"/>
+  <Mapping From="HMI.FB_LABEL_1_3" To="FBRT_WINDOW.ClientConnection.FB_LABEL_1_3"/>
+  <Mapping From="HMI.OUT_ANY" To="FBRT_WINDOW.ClientConnection.OUT_ANY"/>
+  <Mapping From="HMI.OUT_ANY_0" To="FBRT_WINDOW.ClientConnection.OUT_ANY_0"/>
+  <Mapping From="HMI.OUT_ANY_1" To="FBRT_WINDOW.ClientConnection.OUT_ANY_1"/>
+  <Mapping From="HMI.OUT_ANY_2" To="FBRT_WINDOW.ClientConnection.OUT_ANY_2"/>
+  <Mapping From="HMI.OUT_ANY_3" To="FBRT_WINDOW.ClientConnection.OUT_ANY_3"/>
+  <Mapping From="HMI.SUBSCRIBE_1_0" To="FBRT_WINDOW.ClientConnection.SUBSCRIBE_1_0"/>
+  <Mapping From="HMI.SUBSCRIBE_1_0_0" To="FBRT_WINDOW.ClientConnection.SUBSCRIBE_1_0_0"/>
+  <Mapping From="HMI.SUBSCRIBE_1_0_1" To="FBRT_WINDOW.ClientConnection.SUBSCRIBE_1_0_1"/>
+  <Mapping From="HMI.SUBSCRIBE_1_0_2" To="FBRT_WINDOW.ClientConnection.SUBSCRIBE_1_0_2"/>
+  <Mapping From="HMI.SUBSCRIBE_1_0_3" To="FBRT_WINDOW.ClientConnection.SUBSCRIBE_1_0_3"/>
+  <Mapping From="HMI.STRING2STRING_2" To="FBRT_WINDOW.ClientConnection.STRING2STRING_2"/>
+  <Mapping From="HMI.STRING2STRING_2_0" To="FBRT_WINDOW.ClientConnection.STRING2STRING_2_0"/>
+  <Mapping From="HMI.STRING2STRING_2_1" To="FBRT_WINDOW.ClientConnection.STRING2STRING_2_1"/>
+  <Mapping From="HMI.STRING2STRING_2_2" To="FBRT_WINDOW.ClientConnection.STRING2STRING_2_2"/>
+  <Mapping From="HMI.STRING2STRING_2_3" To="FBRT_WINDOW.ClientConnection.STRING2STRING_2_3"/>
+  <Mapping From="HMI.FB_LABEL_2" To="FBRT_WINDOW.MachineState.FB_LABEL_2"/>
+  <Mapping From="HMI.FB_LABEL_2_0" To="FBRT_WINDOW.MachineState.FB_LABEL_2_0"/>
+  <Mapping From="HMI.FB_LABEL_2_1" To="FBRT_WINDOW.MachineState.FB_LABEL_2_1"/>
+  <Mapping From="HMI.FB_LABEL_2_2" To="FBRT_WINDOW.MachineState.FB_LABEL_2_2"/>
+  <Mapping From="HMI.FB_LABEL_2_0_0" To="FBRT_WINDOW.MachineState.FB_LABEL_2_0_0"/>
+  <Mapping From="HMI.FB_LABEL_2_1_0" To="FBRT_WINDOW.MachineState.FB_LABEL_2_1_0"/>
+  <Mapping From="HMI.OUT_ANY_4" To="FBRT_WINDOW.MachineState.OUT_ANY_4"/>
+  <Mapping From="HMI.OUT_ANY_5" To="FBRT_WINDOW.MachineState.OUT_ANY_5"/>
+  <Mapping From="HMI.OUT_ANY_6" To="FBRT_WINDOW.MachineState.OUT_ANY_6"/>
+  <Mapping From="HMI.OUT_ANY_7" To="FBRT_WINDOW.MachineState.OUT_ANY_7"/>
+  <Mapping From="HMI.SUBSCRIBE_1_1" To="FBRT_WINDOW.MachineState.SUBSCRIBE_1_1"/>
+  <Mapping From="HMI.SUBSCRIBE_1_2" To="FBRT_WINDOW.MachineState.SUBSCRIBE_1_2"/>
+  <Mapping From="HMI.SUBSCRIBE_1_3" To="FBRT_WINDOW.MachineState.SUBSCRIBE_1_3"/>
+  <Mapping From="HMI.SUBSCRIBE_1_4" To="FBRT_WINDOW.MachineState.SUBSCRIBE_1_4"/>
+  <Mapping From="HMI.STRING2STRING_3" To="FBRT_WINDOW.MachineState.STRING2STRING_3"/>
+  <Mapping From="HMI.STRING2STRING_4" To="FBRT_WINDOW.MachineState.STRING2STRING_4"/>
+  <Mapping From="HMI.STRING2STRING_5" To="FBRT_WINDOW.MachineState.STRING2STRING_5"/>
+  <Mapping From="HMI.STRING2STRING_6" To="FBRT_WINDOW.MachineState.STRING2STRING_6"/>
+  <Mapping From="SwitchStopperLifter.SwitchClient" To="RaspberryPI_2.EMB_RES.SwitchClient"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut" To="RaspberryPI_2.EMB_RES.E_TimeOut"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_0" To="RaspberryPI_2.EMB_RES.E_TimeOut_0"/>
+  <Mapping From="SwitchStopperLifter.SUBSCRIBE_2" To="RaspberryPI_2.EMB_RES.SUBSCRIBE_2"/>
+  <Mapping From="SwitchStopperLifter.LifterClient" To="RaspberryPI_2.EMB_RES.LifterClient"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_0_0" To="RaspberryPI_2.EMB_RES.E_TimeOut_0_0"/>
+  <Mapping From="SwitchStopperLifter.StopperClient" To="RaspberryPI_2.EMB_RES.StopperClient"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2" To="RaspberryPI_2.EMB_RES.E_TimeOut_2"/>
+  <Mapping From="SwitchStopperLifter.E_SWITCH" To="RaspberryPI_2.EMB_RES.E_SWITCH"/>
+  <Mapping From="SwitchStopperLifter.stopper" To="RaspberryPI_2.EMB_RES.stopper"/>
+  <Mapping From="SwitchStopperLifter.lifter" To="RaspberryPI_2.EMB_RES.lifter"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2_0" To="RaspberryPI_2.EMB_RES.E_TimeOut_2_0"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2_1" To="RaspberryPI_2.EMB_RES.E_TimeOut_2_1"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2_2" To="RaspberryPI_2.EMB_RES.E_TimeOut_2_2"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2_3" To="RaspberryPI_2.EMB_RES.E_TimeOut_2_3"/>
+  <Mapping From="SwitchStopperLifter.F_BOOL_TO_STRING_0" To="RaspberryPI_2.EMB_RES.F_BOOL_TO_STRING_0"/>
+  <Mapping From="SwitchStopperLifter.F_BOOL_TO_STRING_0_0" To="RaspberryPI_2.EMB_RES.F_BOOL_TO_STRING_0_0"/>
+  <Mapping From="SwitchStopperLifter.E_TimeOut_2_0_0" To="RaspberryPI_2.EMB_RES.E_TimeOut_2_0_0"/>
+  <Mapping From="SwitchStopperLifter.STRING2STRING_1" To="RaspberryPI_2.EMB_RES.STRING2STRING_1"/>
+  <Mapping From="SwitchStopperLifter.PUBLISH_0" To="RaspberryPI_2.EMB_RES.PUBLISH_0"/>
+  <Mapping From="SwitchStopperLifter.SUBSCRIBE_0" To="RaspberryPI_2.EMB_RES.SUBSCRIBE_0"/>
+  <Mapping From="SwitchStopperLifter.PUBLISH_0_0" To="RaspberryPI_2.EMB_RES.PUBLISH_0_0"/>
+  <Mapping From="SwitchStopperLifter.PUBLISH_1_0" To="RaspberryPI_2.EMB_RES.PUBLISH_1_0"/>
+  <Mapping From="SwitchStopperLifter.PUBLISH_1_1" To="RaspberryPI_2.EMB_RES.PUBLISH_1_1"/>
+  <Mapping From="SwitchStopperLifter.PUBLISH_1_2" To="RaspberryPI_2.EMB_RES.PUBLISH_1_2"/>
+  <Mapping From="URCamera.UR2" To="RaspberryPI_1.EMB_RES.UR2"/>
+  <Mapping From="URCamera.URMSGjudge" To="RaspberryPI_1.EMB_RES.URMSGjudge"/>
+  <Mapping From="URCamera.URMSGmonitoringRESULT" To="RaspberryPI_1.EMB_RES.URMSGmonitoringRESULT"/>
+  <Mapping From="URCamera.URClient" To="RaspberryPI_1.EMB_RES.URClient"/>
+  <Mapping From="URCamera.E_TimeOut_1" To="RaspberryPI_1.EMB_RES.E_TimeOut_1"/>
+  <Mapping From="URCamera.E_TimeOut_3" To="RaspberryPI_1.EMB_RES.E_TimeOut_3"/>
+  <Mapping From="URCamera.Camera" To="RaspberryPI_1.EMB_RES.Camera"/>
+  <Mapping From="URCamera.CameraMonitoringCMD" To="RaspberryPI_1.EMB_RES.CameraMonitoringCMD"/>
+  <Mapping From="URCamera.CameraClient" To="RaspberryPI_1.EMB_RES.CameraClient"/>
+  <Mapping From="URCamera.E_TimeOut_4" To="RaspberryPI_1.EMB_RES.E_TimeOut_4"/>
+  <Mapping From="URCamera.E_TimeOut_5" To="RaspberryPI_1.EMB_RES.E_TimeOut_5"/>
+  <Mapping From="URCamera.SUBSCRIBE_2_0" To="RaspberryPI_1.EMB_RES.SUBSCRIBE_2_0"/>
+  <Mapping From="URCamera.SUBSCRIBE_0_0" To="RaspberryPI_1.EMB_RES.SUBSCRIBE_0_0"/>
+  <Mapping From="URCamera.SUBSCRIBE_0_1" To="RaspberryPI_1.EMB_RES.SUBSCRIBE_0_1"/>
+  <Mapping From="URCamera.PUBLISH_1" To="RaspberryPI_1.EMB_RES.PUBLISH_1"/>
+  <Mapping From="URCamera.PUBLISH_0_1" To="RaspberryPI_1.EMB_RES.PUBLISH_0_1"/>
+  <Mapping From="URCamera.SUBSCRIBE_2_1" To="RaspberryPI_1.EMB_RES.SUBSCRIBE_2_1"/>
+  <Mapping From="URCamera.PUBLISH_1_3" To="RaspberryPI_1.EMB_RES.PUBLISH_1_3"/>
+  <Mapping From="URCamera.PUBLISH_1_4" To="RaspberryPI_1.EMB_RES.PUBLISH_1_4"/>
+  <Mapping From="URCamera.URMSGmonitoringCMD" To="RaspberryPI_1.EMB_RES.URMSGmonitoringCMD"/>
+  <Mapping From="URCamera.CameraMonitoringRESULT" To="RaspberryPI_1.EMB_RES.CameraMonitoringRESULT"/>
+  <Mapping From="URCamera.PUBLISH_1_5" To="RaspberryPI_1.EMB_RES.PUBLISH_1_5"/>
+  <Mapping From="URCamera.PUBLISH_1_6" To="RaspberryPI_1.EMB_RES.PUBLISH_1_6"/>
+  <Mapping From="URCamera.PUBLISH_1_7" To="RaspberryPI_1.EMB_RES.PUBLISH_1_7"/>
+  <Mapping From="URCamera.PUBLISH_1_8" To="RaspberryPI_1.EMB_RES.PUBLISH_1_8"/>
+  <Mapping From="DataBaseOperation.sqlUpdateMaterial" To="FORTE_PC.EMB_RES.sqlUpdateMaterial"/>
+  <Mapping From="DataBaseOperation.splitCameraInfo" To="FORTE_PC.EMB_RES.splitCameraInfo"/>
+  <Mapping From="DataBaseOperation.findNext" To="FORTE_PC.EMB_RES.findNext"/>
+  <Mapping From="DataBaseOperation.palletOne" To="FORTE_PC.EMB_RES.palletOne"/>
+  <Mapping From="DataBaseOperation.SUBSCRIBE_0_2" To="FORTE_PC.EMB_RES.SUBSCRIBE_0_2"/>
+  <Mapping From="DataBaseOperation.SUBSCRIBE_1" To="FORTE_PC.EMB_RES.SUBSCRIBE_1"/>
+  <Mapping From="DataBaseOperation.PUBLISH_2_0" To="FORTE_PC.EMB_RES.PUBLISH_2_0"/>
+  <Mapping From="DataBaseOperation.PUBLISH_0_2" To="FORTE_PC.EMB_RES.PUBLISH_0_2"/>
+  <Segment Name="Ethernet" Type="Ethernet" dx1="1500.0" x="1710.0" y="570.0"/>
+  <Link CommResource="RaspberryPI_1" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="RaspberryPI_2" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="FORTE_PC" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="FBRT_WINDOW" Comment="" SegmentName="Ethernet"/>
+</System>

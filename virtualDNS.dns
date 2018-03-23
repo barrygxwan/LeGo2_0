@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<virtualDNS:VirtualDNSManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:virtualDNS="org.fordiac.ide.virtualDNS" activeVirtualDNS="//@availableDNSCollections.0">
+  <availableDNSCollections name="rasbpi">
+    <virtualDNSEntries name="NetGateServerAddress" value="225.0.0.1:61499"/>
+    <virtualDNSEntries name="LifterPub" value="225.0.0.1:61500"/>
+    <virtualDNSEntries name="PalletOnePub" value="225.0.0.1:61501"/>
+    <virtualDNSEntries name="StopperPub" value="225.0.0.1:61502"/>
+    <virtualDNSEntries name="FindNextPub" value="225.0.0.1:61503"/>
+    <virtualDNSEntries name="URPub1" value="225.0.0.1:61504"/>
+    <virtualDNSEntries name="URPub2" value="225.0.0.1:61505"/>
+    <virtualDNSEntries name="switchclient" value="225.0.0.1:61506"/>
+    <virtualDNSEntries name="stopperclient" value="225.0.0.1:61507"/>
+    <virtualDNSEntries name="lifterclient" value="225.0.0.1:61508"/>
+    <virtualDNSEntries name="URclient" value="225.0.0.1:61509"/>
+    <virtualDNSEntries name="Cameraclient" value="225.0.0.1:61510"/>
+    <virtualDNSEntries name="URMoniteringCMD" value="225.0.0.1:61511"/>
+    <virtualDNSEntries name="URMoniteringRESULT" value="225.0.0.1:61512"/>
+    <virtualDNSEntries name="CameraMornitoringCMD" value="225.0.0.1:61513"/>
+    <virtualDNSEntries name="CameraMornitoringResult" value="225.0.0.1:61514"/>
+  </availableDNSCollections>
+</virtualDNS:VirtualDNSManagement>
